@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started — Stackly HealthCare+</title>
+    <meta name="description" content="Create your Stackly HealthCare+ account. Join thousands of patients managing their health with our smart platform.">
+
+    <link rel="stylesheet" href="getstarted.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= ANIMATED BACKGROUND ================= -->
+
+<div class="bg-animation">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<!-- ================= REGISTRATION CARD ================= -->
+
+<div class="register-container">
+    <div class="register-card">
+
+        <!-- Header -->
+        <div class="register-header">
+            <a href="index.html" class="register-logo">
+                <img src="./images/Stackly Logo 01.webp" alt="Stackly Logo">
+                <span>HealthCare+</span>
+            </a>
+            <h1>Create Your Account</h1>
+            <p>Join us for smarter healthcare management</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="step-indicator active" data-step="1">
+                <div class="step-circle">1</div>
+                <span class="step-label">Personal</span>
+            </div>
+            <div class="step-line" id="line1"></div>
+            <div class="step-indicator" data-step="2">
+                <div class="step-circle">2</div>
+                <span class="step-label">Medical</span>
+            </div>
+            <div class="step-line" id="line2"></div>
+            <div class="step-indicator" data-step="3">
+                <div class="step-circle">3</div>
+                <span class="step-label">Account</span>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registerForm" novalidate>
+
+            <!-- ===== STEP 1: Personal Info ===== -->
+            <div class="form-step active" id="step1">
+
+                <div class="step-title">
+                    <i class="fa-solid fa-user"></i>
+                    Personal Information
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group" id="nameGroup">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="name" required>
+                    <div class="error-message" id="nameError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Please enter your full name</span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group" id="emailGroup">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="regEmail" placeholder="Email Address" autocomplete="email" required>
+                    <div class="error-message" id="emailError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Please enter a valid email address</span>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group" id="phoneGroup">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" autocomplete="tel" required>
+                    <div class="error-message" id="phoneError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Please enter a valid phone number</span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="button" class="btn-next" id="toStep2">
+                        Continue <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ===== STEP 2: Medical Info ===== -->
+            <div class="form-step" id="step2">
+
+                <div class="step-title">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Medical Information
+                </div>
+
+                <!-- DOB & Gender Row -->
+                <div class="form-row">
+                    <div class="form-group" id="dobGroup">
+                        <i class="fa-solid fa-calendar input-icon"></i>
+                        <input type="date" id="dob" required>
+                        <div class="error-message" id="dobError">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Date of birth is required</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="genderGroup">
+                        <i class="fa-solid fa-venus-mars input-icon"></i>
+                        <select id="gender" required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer-not">Prefer not to say</option>
+                        </select>
+                        <div class="error-message" id="genderError">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Please select your gender</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Group -->
+                <div class="form-group" id="bloodGroup">
+                    <i class="fa-solid fa-droplet input-icon"></i>
+                    <select id="bloodType" required>
+                        <option value="" disabled selected>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <div class="error-message" id="bloodError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Please select your blood group</span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" id="backToStep1">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+                    <button type="button" class="btn-next" id="toStep3">
+                        Continue <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ===== STEP 3: Account Setup ===== -->
+            <div class="form-step" id="step3">
+
+                <div class="step-title">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Account Setup
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" id="passwordGroup">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="regPassword" placeholder="Create Password" autocomplete="new-password" required>
+                    <button type="button" class="password-toggle" id="togglePassword" aria-label="Toggle password">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <div class="error-message" id="passwordError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Password must be at least 8 characters</span>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar-bg">
+                            <div class="strength-bar-fill" id="strengthFill"></div>
+                        </div>
+                        <div class="strength-text" id="strengthText"></div>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group" id="confirmGroup">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" required>
+                    <button type="button" class="password-toggle" id="toggleConfirm" aria-label="Toggle confirm password">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <div class="error-message" id="confirmError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>Passwords do not match</span>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="terms-group" id="termsGroup">
+                    <input type="checkbox" id="agreeTerms">
+                    <label for="agreeTerms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                <div class="error-message" id="termsError" style="margin-top:-14px; margin-bottom:14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>You must agree to the terms</span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" id="backToStep2">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text"><i class="fa-solid fa-user-plus"></i> Create Account</span>
+                        <div class="btn-spinner"></div>
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+        <!-- Login Link -->
+        <div class="login-link">
+            Already have an account? <a href="login.html">Sign In</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================= SUCCESS OVERLAY ================= -->
+
+<div class="success-overlay" id="successOverlay">
+    <div class="success-box">
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>Account Created!</h2>
+        <p>Your HealthCare+ account is ready. Sign in to get started.</p>
+        <a href="login.html" class="primary-btn">Sign In Now</a>
+    </div>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+(function () {
+    'use strict';
+
+    // ---- DOM Elements ----
+    const form = document.getElementById('registerForm');
+    const steps = document.querySelectorAll('.form-step');
+    const indicators = document.querySelectorAll('.step-indicator');
+    const lines = [document.getElementById('line1'), document.getElementById('line2')];
+    let currentStep = 1;
+
+    // Step 1
+    const fullName = document.getElementById('fullName');
+    const regEmail = document.getElementById('regEmail');
+    const phone = document.getElementById('phone');
+
+    // Step 2
+    const dob = document.getElementById('dob');
+    const gender = document.getElementById('gender');
+    const bloodType = document.getElementById('bloodType');
+
+    // Step 3
+    const regPassword = document.getElementById('regPassword');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const agreeTerms = document.getElementById('agreeTerms');
+    const submitBtn = document.getElementById('submitBtn');
+    const successOverlay = document.getElementById('successOverlay');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[\d\s\+\-()]{7,15}$/;
+
+    // ---- Helpers ----
+    function showError(groupId, errorId) {
+        document.getElementById(groupId).classList.add('error');
+        document.getElementById(errorId).classList.add('show');
+    }
+
+    function clearError(groupId, errorId) {
+        document.getElementById(groupId).classList.remove('error');
+        document.getElementById(errorId).classList.remove('show');
+    }
+
+    function clearAllErrors() {
+        document.querySelectorAll('.form-group.error').forEach(function (el) {
+            el.classList.remove('error');
+        });
+        document.querySelectorAll('.error-message.show').forEach(function (el) {
+            el.classList.remove('show');
+        });
+    }
+
+    // ---- Step Navigation ----
+    function goToStep(step) {
+        steps.forEach(function (s) { s.classList.remove('active'); });
+        document.getElementById('step' + step).classList.add('active');
+
+        indicators.forEach(function (ind, i) {
+            var sNum = i + 1;
+            ind.classList.remove('active', 'completed');
+            if (sNum < step) ind.classList.add('completed');
+            else if (sNum === step) ind.classList.add('active');
+        });
+
+        lines.forEach(function (line, i) {
+            if (i < step - 1) line.classList.add('active');
+            else line.classList.remove('active');
+        });
+
+        currentStep = step;
+    }
+
+    // ---- Step 1 Validation ----
+    function validateStep1() {
+        var valid = true;
+        clearAllErrors();
+
+        if (!fullName.value.trim()) {
+            showError('nameGroup', 'nameError');
+            valid = false;
+        }
+        if (!regEmail.value.trim() || !emailRegex.test(regEmail.value.trim())) {
+            showError('emailGroup', 'emailError');
+            valid = false;
+        }
+        if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
+            showError('phoneGroup', 'phoneError');
+            valid = false;
+        }
+        return valid;
+    }
+
+    // ---- Step 2 Validation ----
+    function validateStep2() {
+        var valid = true;
+        clearAllErrors();
+
+        if (!dob.value) {
+            showError('dobGroup', 'dobError');
+            valid = false;
+        }
+        if (!gender.value) {
+            showError('genderGroup', 'genderError');
+            valid = false;
+        }
+        if (!bloodType.value) {
+            showError('bloodGroup', 'bloodError');
+            valid = false;
+        }
+        return valid;
+    }
+
+    // ---- Step 3 Validation ----
+    function validateStep3() {
+        var valid = true;
+        clearAllErrors();
+
+        if (!regPassword.value || regPassword.value.length < 8) {
+            showError('passwordGroup', 'passwordError');
+            valid = false;
+        }
+        if (confirmPassword.value !== regPassword.value || !confirmPassword.value) {
+            showError('confirmGroup', 'confirmError');
+            valid = false;
+        }
+        if (!agreeTerms.checked) {
+            document.getElementById('termsError').classList.add('show');
+            valid = false;
+        }
+        return valid;
+    }
+
+    // ---- Navigation Buttons ----
+    document.getElementById('toStep2').addEventListener('click', function () {
+        if (validateStep1()) goToStep(2);
+    });
+
+    document.getElementById('toStep3').addEventListener('click', function () {
+        if (validateStep2()) goToStep(3);
+    });
+
+    document.getElementById('backToStep1').addEventListener('click', function () {
+        clearAllErrors();
+        goToStep(1);
+    });
+
+    document.getElementById('backToStep2').addEventListener('click', function () {
+        clearAllErrors();
+        goToStep(2);
+    });
+
+    // ---- Password Strength Meter ----
+    var strengthFill = document.getElementById('strengthFill');
+    var strengthText = document.getElementById('strengthText');
+
+    regPassword.addEventListener('input', function () {
+        var val = this.value;
+        var score = 0;
+
+        if (val.length >= 8) score++;
+        if (val.length >= 12) score++;
+        if (/[A-Z]/.test(val) && /[a-z]/.test(val)) score++;
+        if (/\d/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val)) score++;
+
+        strengthFill.className = 'strength-bar-fill';
+        strengthText.className = 'strength-text';
+
+        if (val.length === 0) {
+            strengthText.textContent = '';
+            return;
+        }
+
+        if (score <= 1) {
+            strengthFill.classList.add('weak');
+            strengthText.classList.add('weak');
+            strengthText.textContent = 'Weak';
+        } else if (score === 2) {
+            strengthFill.classList.add('fair');
+            strengthText.classList.add('fair');
+            strengthText.textContent = 'Fair';
+        } else if (score === 3) {
+            strengthFill.classList.add('good');
+            strengthText.classList.add('good');
+            strengthText.textContent = 'Good';
+        } else {
+            strengthFill.classList.add('strong');
+            strengthText.classList.add('strong');
+            strengthText.textContent = 'Strong';
+        }
+    });
+
+    // ---- Password Toggle ----
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        var isPass = regPassword.type === 'password';
+        regPassword.type = isPass ? 'text' : 'password';
+        this.querySelector('i').className = isPass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+    });
+
+    document.getElementById('toggleConfirm').addEventListener('click', function () {
+        var isPass = confirmPassword.type === 'password';
+        confirmPassword.type = isPass ? 'text' : 'password';
+        this.querySelector('i').className = isPass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+    });
+
+    // ---- Real-time input clearing errors ----
+    var allInputs = form.querySelectorAll('input, select');
+    allInputs.forEach(function (input) {
+        input.addEventListener('input', function () {
+            var group = this.closest('.form-group');
+            if (group && group.classList.contains('error')) {
+                group.classList.remove('error');
+                var err = group.querySelector('.error-message');
+                if (err) err.classList.remove('show');
+            }
+        });
+    });
+
+    agreeTerms.addEventListener('change', function () {
+        document.getElementById('termsError').classList.remove('show');
+    });
+
+    // ---- Submit ----
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateStep3()) return;
+
+        submitBtn.classList.add('loading');
+
+        setTimeout(function () {
+            submitBtn.classList.remove('loading');
+            successOverlay.classList.add('show');
+        }, 1800);
+    });
+
+})();
+</script>
+
+</body>
+</html>

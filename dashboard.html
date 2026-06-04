@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Stackly HealthCare+</title>
+    <meta name="description" content="Your personal HealthCare+ dashboard. View appointments, medical records, health score, and manage your healthcare journey.">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+        <img src="./images/Stackly Logo 01.webp" alt="Stackly Logo">
+        <h2>HealthCare+</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+
+        <div class="nav-label">Main Menu</div>
+
+        <a href="#" class="active" id="navDashboard">
+            <i class="fa-solid fa-grid-2"></i>
+            Dashboard
+        </a>
+
+        <a href="#" id="navAppointments">
+            <i class="fa-solid fa-calendar-check"></i>
+            Appointments
+            <span class="badge-count">3</span>
+        </a>
+
+        <a href="#" id="navRecords">
+            <i class="fa-solid fa-folder-open"></i>
+            Medical Records
+        </a>
+
+        <a href="#" id="navPrescriptions">
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+            Prescriptions
+            <span class="badge-count">1</span>
+        </a>
+
+        <a href="#" id="navMessages">
+            <i class="fa-solid fa-comment-medical"></i>
+            Messages
+            <span class="badge-count">5</span>
+        </a>
+
+        <div class="nav-label">Account</div>
+
+        <a href="#" id="navSettings">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+
+        <a href="#" id="navHelp">
+            <i class="fa-solid fa-circle-question"></i>
+            Help & Support
+        </a>
+
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+        <a href="index.html" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </div>
+
+</aside>
+
+<!-- ================= SIDEBAR OVERLAY (Mobile) ================= -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="main-content">
+
+    <!-- ===== Top Header ===== -->
+    <header class="top-header">
+
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="greeting">
+                <h1 id="greetingText">Good Morning, John!</h1>
+                <p>Here's your health summary for today</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+
+            <!-- Search -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search anything…" id="searchInput">
+            </div>
+
+            <!-- Notifications -->
+            <button class="header-icon" id="notifBtn" aria-label="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="dot"></span>
+            </button>
+
+            <!-- User Profile -->
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <span>John Doe</span>
+                    <small>Patient</small>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ===== Dashboard Content ===== -->
+    <div class="dashboard-content">
+
+        <!-- Stat Cards -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>3</h3>
+                    <p>Upcoming Appointments</p>
+                    <span class="stat-change up"><i class="fa-solid fa-arrow-up"></i> 1 new this week</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>7</h3>
+                    <p>Active Prescriptions</p>
+                    <span class="stat-change up"><i class="fa-solid fa-arrow-up"></i> 2 refills due</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>12</h3>
+                    <p>Lab Results</p>
+                    <span class="stat-change up"><i class="fa-solid fa-arrow-up"></i> All normal</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>87%</h3>
+                    <p>Health Score</p>
+                    <span class="stat-change up"><i class="fa-solid fa-arrow-up"></i> +5% this month</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+
+            <a href="#" class="action-btn">
+                <div class="action-icon blue">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+                <span>Book Appointment</span>
+            </a>
+
+            <a href="#" class="action-btn">
+                <div class="action-icon green">
+                    <i class="fa-solid fa-file-medical"></i>
+                </div>
+                <span>View Reports</span>
+            </a>
+
+            <a href="#" class="action-btn">
+                <div class="action-icon purple">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <span>Contact Doctor</span>
+            </a>
+
+            <a href="#" class="action-btn">
+                <div class="action-icon red">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <span>Emergency</span>
+            </a>
+
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="two-col">
+
+            <!-- Left: Appointments -->
+            <div class="card-panel">
+                <div class="card-header">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="doctor-cell">
+                                    <div class="doctor-avatar av1">SJ</div>
+                                    <div>
+                                        <div class="doctor-name">Dr. Sarah Jenkins</div>
+                                        <div class="doctor-spec">Cardiologist</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Jun 06, 2026</td>
+                            <td>10:00 AM</td>
+                            <td>
+                                <span class="status-badge confirmed">
+                                    <span class="status-dot"></span>
+                                    Confirmed
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-cell">
+                                    <div class="doctor-avatar av2">MC</div>
+                                    <div>
+                                        <div class="doctor-name">Dr. Michael Chen</div>
+                                        <div class="doctor-spec">Neurologist</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Jun 10, 2026</td>
+                            <td>02:30 PM</td>
+                            <td>
+                                <span class="status-badge pending">
+                                    <span class="status-dot"></span>
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-cell">
+                                    <div class="doctor-avatar av3">ER</div>
+                                    <div>
+                                        <div class="doctor-name">Dr. Emily Rodriguez</div>
+                                        <div class="doctor-spec">Pediatrician</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Jun 15, 2026</td>
+                            <td>11:00 AM</td>
+                            <td>
+                                <span class="status-badge confirmed">
+                                    <span class="status-dot"></span>
+                                    Confirmed
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right: Health Overview -->
+            <div class="health-card">
+                <div class="card-header">
+                    <h2>Health Overview</h2>
+                    <a href="#" class="view-all">Details</a>
+                </div>
+
+                <!-- Health Score Circle -->
+                <div class="health-score">
+                    <div class="score-circle">
+                        <svg viewBox="0 0 140 140">
+                            <circle class="bg" cx="70" cy="70" r="65"></circle>
+                            <circle class="progress" cx="70" cy="70" r="65" id="scoreProgress"></circle>
+                        </svg>
+                        <div class="score-value">
+                            <h2>87</h2>
+                            <span>Health Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vitals -->
+                <div class="health-metrics">
+                    <div class="metric-row">
+                        <div class="metric-label">
+                            <i class="fa-solid fa-heart heart"></i>
+                            Heart Rate
+                        </div>
+                        <div class="metric-value">72 bpm</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label">
+                            <i class="fa-solid fa-gauge bp"></i>
+                            Blood Pressure
+                        </div>
+                        <div class="metric-value">120/80</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label">
+                            <i class="fa-solid fa-temperature-half temp"></i>
+                            Temperature
+                        </div>
+                        <div class="metric-value">98.6°F</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label">
+                            <i class="fa-solid fa-lungs oxygen"></i>
+                            SpO2
+                        </div>
+                        <div class="metric-value">98%</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card-panel">
+            <div class="card-header">
+                <h2>Recent Activity</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="activity-list">
+
+                <div class="activity-item">
+                    <div class="activity-dot blue"></div>
+                    <div class="activity-text">
+                        <p><strong>Appointment booked</strong> with Dr. Sarah Jenkins — Cardiology consultation</p>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot green"></div>
+                    <div class="activity-text">
+                        <p><strong>Lab results ready</strong> — Complete Blood Count (CBC) report is now available</p>
+                        <span>Yesterday at 4:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot orange"></div>
+                    <div class="activity-text">
+                        <p><strong>Prescription refill</strong> — Metformin 500mg due for refill in 3 days</p>
+                        <span>Yesterday at 9:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot purple"></div>
+                    <div class="activity-text">
+                        <p><strong>Health score updated</strong> — Your score improved by 5 points this month</p>
+                        <span>Jun 01, 2026</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot green"></div>
+                    <div class="activity-text">
+                        <p><strong>Appointment completed</strong> with Dr. Michael Chen — Follow-up notes available</p>
+                        <span>May 28, 2026</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+(function () {
+    'use strict';
+
+    // ---- Sidebar Toggle ----
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    var toggleBtn = document.getElementById('sidebarToggle');
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    toggleBtn.addEventListener('click', function () {
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    overlay.addEventListener('click', closeSidebar);
+
+    // Close sidebar on window resize above mobile breakpoint
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 991) {
+            closeSidebar();
+        }
+    });
+
+    // ---- Active Nav Item ----
+    var navLinks = document.querySelectorAll('.sidebar-nav a');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            navLinks.forEach(function (l) { l.classList.remove('active'); });
+            this.classList.add('active');
+
+            // Close sidebar on mobile after clicking
+            if (window.innerWidth <= 991) {
+                closeSidebar();
+            }
+        });
+    });
+
+    // ---- Dynamic Greeting ----
+    var greetingText = document.getElementById('greetingText');
+    var hour = new Date().getHours();
+    var greeting = 'Good Morning';
+    if (hour >= 12 && hour < 17) greeting = 'Good Afternoon';
+    else if (hour >= 17) greeting = 'Good Evening';
+    greetingText.textContent = greeting + ', John!';
+
+    // ---- Animate Health Score Circle on Load ----
+    var scoreProgress = document.getElementById('scoreProgress');
+    var circumference = 2 * Math.PI * 65; // r = 65
+    var score = 87;
+    var offset = circumference - (score / 100) * circumference;
+
+    // Set initial state (fully hidden)
+    scoreProgress.style.strokeDasharray = circumference;
+    scoreProgress.style.strokeDashoffset = circumference;
+
+    // Trigger animation after page load
+    setTimeout(function () {
+        scoreProgress.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        scoreProgress.style.strokeDashoffset = offset;
+    }, 500);
+
+    // ---- Animate stat cards counter ----
+    function animateValue(element, start, end, duration) {
+        var startTimestamp = null;
+        var suffix = '';
+        var text = element.textContent;
+
+        // Extract suffix (%, +, etc.)
+        var numMatch = text.match(/^(\d+)/);
+        if (numMatch) {
+            suffix = text.replace(numMatch[0], '');
+        }
+
+        function step(timestamp) {
+            if (!startTimestamp) startTimestamp = timestamp;
+            var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            var current = Math.floor(progress * (end - start) + start);
+            element.textContent = current + suffix;
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        }
+        window.requestAnimationFrame(step);
+    }
+
+    // Animate stat numbers
+    var statNumbers = document.querySelectorAll('.stat-details h3');
+    statNumbers.forEach(function (el) {
+        var text = el.textContent;
+        var numMatch = text.match(/^(\d+)/);
+        if (numMatch) {
+            var target = parseInt(numMatch[0], 10);
+            el.textContent = '0' + text.replace(numMatch[0], '');
+            setTimeout(function () {
+                animateValue(el, 0, target, 1200);
+            }, 300);
+        }
+    });
+
+})();
+</script>
+
+</body>
+</html>
